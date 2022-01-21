@@ -2,8 +2,8 @@
 import {css} from '@emotion/react'
 
 let i = 0;
-let txt = "Hello! My name is Rohinesh and I am a Software and Mechanical Engineer";
-let speed = 100;
+let txt = "My name is Rohinesh, and I am a Software and Mechanical Engineer.";
+let speed = 50;
 
 function typeWriter(){
     if(i < txt.length){
@@ -24,10 +24,11 @@ function Home(){
         background-attachment: fixed;
         background-repeat: no-repeat;
         display: flex;
+        border-bottom: 2px solid black
     `
 
     return(
-        <section className="hero is-large"
+        <section className="hero is-fullheight"
             css={style}>
             <div className="py-2 hero-head">
                 <div className="navbar">
@@ -43,9 +44,6 @@ function Home(){
                         </div>
                         <div className="navbar-menu">
                             <div className="navbar-end">
-                                <a href="" className="navbar-item has-text-white">
-                                    HOME
-                                </a>
                                 <a href="" className='navbar-item has-text-white'>
                                     ABOUT
                                 </a>
@@ -68,9 +66,9 @@ function Home(){
             </div>
             <div className="hero-body">
                 <div className="container has-text-centered">
-                    <div className="text has-text-white is-size-3" id="intro" css={
+                    <div className="text has-text-dark-grey is-size-2 has-text-weight-bold" id="intro" css={
                         css`
-                            font-family:serif
+                            font-family:courier
                         `
                     }/>
                 </div>
