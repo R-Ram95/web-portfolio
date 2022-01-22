@@ -44,19 +44,19 @@ function Home(){
                         </div>
                         <div className="navbar-menu">
                             <div className="navbar-end">
-                                <a href="" className='navbar-item has-text-white'>
+                                <a href="#about" className='navbar-item has-text-white'>
                                     ABOUT
                                 </a>
-                                <a href="" className="navbar-item has-text-white">
-                                    EDUCATION
-                                </a>
-                                <a href="" className="navbar-item has-text-white">
+                                <a href="projects" className="navbar-item has-text-white">
                                     PROJECTS
                                 </a>
-                                <a href="" className="navbar-item has-text-white">
+                                <a href="education" className="navbar-item has-text-white">
+                                    EDUCATION
+                                </a>
+                                <a href="experience" className="navbar-item has-text-white">
                                     EXPERIENCE
                                 </a>
-                                <a href="" className="navbar-item has-text-white">
+                                <a href="contact" className="navbar-item has-text-white">
                                     CONTACT
                                 </a>
                             </div>
