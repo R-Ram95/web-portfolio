@@ -2,7 +2,7 @@
 import {css} from '@emotion/react'
 
 let i = 0;
-let txt = "My name is Rohinesh, and I am a Software and Mechanical Engineer.";
+let txt = "My name is Roh and I am a Software Engineer.";
 let speed = 50;
 
 function typeWriter(){
@@ -30,40 +30,6 @@ function Home(){
     return(
         <section className="hero is-fullheight"
             css={style}>
-            <div className="py-2 hero-head">
-                <div className="navbar">
-                    <div className="container">
-                        <div className="navbar-brand">
-                        <figure className="image" css={
-                            css`
-                                width:300px
-                            `
-                            }>
-                                <img className="is-rounded" src="logow.png" alt=""/>
-                            </figure>
-                        </div>
-                        <div className="navbar-menu">
-                            <div className="navbar-end">
-                                <a href="#about" className='navbar-item has-text-white'>
-                                    ABOUT
-                                </a>
-                                <a href="projects" className="navbar-item has-text-white">
-                                    PROJECTS
-                                </a>
-                                <a href="education" className="navbar-item has-text-white">
-                                    EDUCATION
-                                </a>
-                                <a href="experience" className="navbar-item has-text-white">
-                                    EXPERIENCE
-                                </a>
-                                <a href="contact" className="navbar-item has-text-white">
-                                    CONTACT
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div className="hero-body">
                 <div className="container has-text-centered">
                     <div className="text has-text-dark-grey is-size-2 has-text-weight-bold" id="intro" css={
