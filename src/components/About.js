@@ -5,12 +5,12 @@ import {css} from '@emotion/react'
 function About(){
 
     return(
-        <div id="about" className="hero is-fullheight"
+        <div className="hero is-fullheight"
             css={css`
                 background-color: rgb(29, 28, 26); 
             `}
         >
-        <div className="columns is-centered py-6">
+        <div className="columns is-centered py-6" id="about">
                 <div className="column has-text-centered is-one-quarter mr-6">
                     <div className="figure">
                         <img className="is-rounded" src="profilepicnb.png" alt="" />

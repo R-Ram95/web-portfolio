@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import {css} from '@emotion/react'
+import About from './About';
 
 let i = 0;
 let txt = "My name is Roh and I am a Software Engineer.";
@@ -28,19 +29,21 @@ function Home(){
     `
 
     return(
-        <section className="hero is-fullheight"
-            css={style}>
-            <div className="hero-body">
-                <div className="container has-text-centered">
-                    <div className="text has-text-dark-grey is-size-2 has-text-weight-bold" id="intro" css={
-                        css`
-                            font-family:courier
-                        `
-                    }/>
+        <div>
+            <section className="hero is-fullheight"
+                css={style}>
+                <div className="hero-body">
+                    <div className="container has-text-centered">
+                        <div className="text has-text-dark-grey is-size-2 has-text-weight-bold" id="intro" css={
+                            css`
+                                font-family:courier
+                            `
+                        }/>
+                    </div>
                 </div>
-            </div>
-            
-        </section>
+            </section>
+            <About/> 
+        </div>
     );
 }
 
