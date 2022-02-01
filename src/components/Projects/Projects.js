@@ -5,6 +5,7 @@ import ProjectsData from './ProjectsData'
 import {useState, useEffect} from 'react'
 
 
+
 export default function Projects() {
 
   // state for project data
@@ -16,22 +17,28 @@ export default function Projects() {
   },[])
 
   let backGroundStyle = css`
-                            background-color: rgb(29, 28, 26);                           
+                          background: url('https://cdn.wallpapersafari.com/55/31/UJ376L.jpg');
+                          background-position: center;
+                          background-size: cover;
+                          background-attachment: fixed;
+                          background-repeat: no-repeat;
+                          display: flex;                          
                         `
 
   return (
       <div className="hero is-fullheight mt-6" css={backGroundStyle}>
-        <div className="container mt-6">
-          <div className="columns">
-            <h1 className='title has-text-white'>PROJECTS</h1>
+        <div className="container mt-6 mb-6">
+          <div className="columns is-centered">
+            <h1 className='title has-text-white'>MY PROJECTS</h1>
           </div>
           <div className="columns is-centered is-multiline">
               {projects.map((project) =>
                 <ProjectCard 
-                key={project.title} 
-                title={project.title} 
-                description={project.description} 
-                url={project.url}/>
+                  key={project.title} 
+                  title={project.title} 
+                  description={project.description} 
+                  url={project.url}
+                />
               )}
           </div>
         </div>

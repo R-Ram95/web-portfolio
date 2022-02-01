@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import {css} from '@emotion/react'
+import { motion } from "framer-motion"
 
 export default function ProjectCard(props) {
     let title = props.title;
@@ -8,9 +9,9 @@ export default function ProjectCard(props) {
 
     let boxStyle = css` box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
                         background-color: rgb(255, 255, 255);
-                        height:100%;
+                        height:250px;
                         border-radius: 25px;
-                        width:75%
+                        width:60%
                     `
     
     // open new tab to project location
@@ -19,8 +20,13 @@ export default function ProjectCard(props) {
     }
 
     return (
-        <div className="card mt-6" 
+        <motion.div className="card mt-6" 
             css={boxStyle}
+            whileHover={{ 
+                scale: 1.1,
+                boxShadow: "10px 10px 10px rgb(0,0,0)"
+            }}
+        
         >
             <div className="card-content" onClick={handleClick}>
                 <div className="content">
@@ -34,6 +40,6 @@ export default function ProjectCard(props) {
                     </ul>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
