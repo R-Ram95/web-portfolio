@@ -19,7 +19,7 @@ function Navbar() {
     // navigate back to home page
     let navigate = useNavigate()
     const handleClick = () => {
-        navigate('/web-portfolio/home')
+        navigate('/web-portfolio/')
     }
 
     return(
