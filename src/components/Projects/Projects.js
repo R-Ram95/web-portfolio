@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import {css} from '@emotion/react'
 import ProjectCard from './ProjectCard';
-import ProjectsData from '../data/ProjectsData'
+import ProjectsData from './ProjectsData'
 import {useState, useEffect} from 'react'
 
 
@@ -26,7 +26,13 @@ export default function Projects() {
             <h1 className='title has-text-white'>PROJECTS</h1>
           </div>
           <div className="columns is-centered is-multiline">
-              {projects.map((project) =><ProjectCard key={project.title} title={project.title} description={project.description} url={project.url}/>)}
+              {projects.map((project) =>
+                <ProjectCard 
+                key={project.title} 
+                title={project.title} 
+                description={project.description} 
+                url={project.url}/>
+              )}
           </div>
         </div>
       </div>

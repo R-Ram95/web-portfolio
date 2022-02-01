@@ -1,8 +1,8 @@
 import 'bulma/css/bulma.css'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Projects from './components/Projects';
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+import Projects from './components/Projects/Projects';
 
 function App() {
   return (
