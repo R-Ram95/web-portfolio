@@ -10,11 +10,11 @@ function About(){
                 background-color: rgb(29, 28, 26); 
             `}
         >
-        <div className="columns is-centered py-6" id="about">
+        <div className="columns is-centered is-vcentered py-6" id="about">
                 <div className="column has-text-centered is-one-quarter mr-6">
-                    <div className="figure">
-                        <img className="is-rounded" src="profilepicnb.png" alt="" />
-                    </div>
+                    <figure className="image">
+                        <img className="" src="profilepicnb.png" alt=""/>
+                    </figure>
                 </div>
                 <div className="column has-text-left is-half">
                     <div className="box">

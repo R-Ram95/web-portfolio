@@ -16,8 +16,8 @@ function Navbar() {
                         `
     
     return(
-        <nav className="navbar is-fixed-top is-transparent" css={css`
-            border-bottom: 2px solid black
+        <nav className="navbar is-fixed-top" css={css`
+            border-bottom: 3px solid black
         `}>
             <div className="container">
                 <div className="navbar-brand">
@@ -32,12 +32,12 @@ function Navbar() {
                 <div className="navbar-menu">
                     <div className="navbar-end">
                         <button css={buttonStyle}>
-                            <Link smooth to='#about'css={textStyle}>
+                            <Link smooth to='web-portfolio/#about'css={textStyle}>
                                 ABOUT
                             </Link>
                         </button>
                         <button css={buttonStyle}>
-                            <Link to="projects" css={textStyle}>
+                            <Link to="web-portfolio/projects" css={textStyle}>
                                 PROJECTS
                             </Link>
                         </button>
