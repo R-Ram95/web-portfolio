@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import {css} from '@emotion/react'
 import {HashLink as Link} from 'react-router-hash-link'
+import { useNavigate } from 'react-router' 
 
 function Navbar() {
 
@@ -15,12 +16,18 @@ function Navbar() {
                             color:black;
                         `
     
+    // navigate back to home page
+    let navigate = useNavigate()
+    const handleClick = () => {
+        navigate('/web-portfolio/home')
+    }
+
     return(
         <nav className="navbar is-fixed-top" css={css`
             border-bottom: 3px solid black
         `}>
             <div className="container">
-                <div className="navbar-brand">
+                <div className="navbar-brand" onClick={handleClick}>
                 <figure className="image" css={
                     css`
                         width:300px
@@ -32,7 +39,7 @@ function Navbar() {
                 <div className="navbar-menu">
                     <div className="navbar-end">
                         <button css={buttonStyle}>
-                            <Link smooth to='web-portfolio/#about'css={textStyle}>
+                            <Link smooth to='web-portfolio/home/#about'css={textStyle}>
                                 ABOUT
                             </Link>
                         </button>
