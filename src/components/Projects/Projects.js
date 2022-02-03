@@ -17,12 +17,13 @@ export default function Projects() {
   },[])
 
   let backGroundStyle = css`
-                          background: url('https://cdn.wallpapersafari.com/55/31/UJ376L.jpg');
+                          background-color: rgb(29, 28, 26);
                           background-position: center;
+                          opacity: 0.9;
                           background-size: cover;
                           background-attachment: fixed;
                           background-repeat: no-repeat;
-                          display: flex;                          
+                          display: flex;                         
                         `
 
   return (

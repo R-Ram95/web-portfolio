@@ -4,21 +4,6 @@ import About from './About';
 import TypeWriter from 'typewriter-effect'
 
 
-// let i = 0;
-// let txt = "My name is Roh and I am a Software Engineer.";
-// let speed = 50;
-
-// // type writer effect
-// function typeWriter(){
-//     if(i < txt.length){
-//         document.getElementById("intro").innerHTML += txt.charAt(i)
-//         i++
-//         setTimeout(typeWriter,speed);
-//     }
-// }
-// // 
-// window.addEventListener("load", typeWriter)
-
 function Home(){
 
     const style = css`
@@ -37,22 +22,26 @@ function Home(){
                 css={style}>
                 <div className="hero-body">
                     <div className="container has-text-centered">
-                        <div className="text has-text-dark-grey is-size-2 has-text-weight-bold">
-                            <TypeWriter className="text has-text-dark-grey is-size-2 is-family-monospace"
+                        <div className="text has-text-dark-grey is-size-4 is-family-monospace">
+                            <div className="text is-size-2 has-text-weight-bold">
+                                Hello, my name is Roh.
+                            </div>
+                            <TypeWriter
                                 onInit={(typewriter)=> 
                                     {
                                         typewriter
-                                            .typeString("Hello, my name is Roh.")
+                                            .typeString("I am a Software Engineer and Developer.")
                                             .deleteAll()
-                                            .typeString("I am a Software Engineer.")
+                                            .typeString("I am a Mechanical Engineer.")
                                             .deleteAll()
-                                            .typeString("Welcome to my Portfolio!")
+                                            .typeString("Welcome to my website!")
                                             .start()
                                     }
                                 }
                                 options= {{
                                     loop: true
                                 }}
+                                css={css`font-family: ui-monospace;`}
                             />
                         </div>
                     </div>

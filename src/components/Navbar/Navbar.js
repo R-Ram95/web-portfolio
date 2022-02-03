@@ -23,9 +23,7 @@ function Navbar() {
     }
 
     return(
-        <nav className="navbar is-fixed-top" css={css`
-            border-bottom: 3px solid black
-        `}>
+        <nav className="navbar is-fixed-top" css={css`border-bottom: 3px solid black`}>
             <div className="container">
                 <div className="navbar-brand" onClick={handleClick}>
                 <figure className="image" css={
