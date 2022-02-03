@@ -39,7 +39,7 @@ function Navbar() {
                 <div className="navbar-menu">
                     <div className="navbar-end">
                         <button css={buttonStyle}>
-                            <Link smooth to='web-portfolio/home/#about'css={textStyle}>
+                            <Link smooth to='web-portfolio/#about'css={textStyle}>
                                 ABOUT
                             </Link>
                         </button>
