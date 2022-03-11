@@ -1,6 +1,7 @@
-import { Container, Col, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TypeWriter from 'typewriter-effect'
+import Text from '../components/Text';
 
 // css styling
 const styles = {
@@ -11,26 +12,14 @@ const styles = {
         backgroundSize: "100% 100%",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat"
-    },
-    titleStyle: {
-        fontFamily: "monospace",
-        fontSize: "50px",
-        color:"#3D3D3D",
-        fontWeight: "bold"
-
-    },
-    typeStyle: {
-        fontFamily: "monospace",
-        fontSize: "30px",
-        color:"#3D3D3D"
     }
 }
 
 function Home() {
     return (
         <Container fluid className="d-flex flex-column justify-content-center align-items-center" style={styles.containerStyle}>
-            <div style={styles.titleStyle}> Hello, my name is Roh.</div>
-            <div style={styles.typeStyle}>
+            <Text style={{fontSize: "50px", fontWeight: "bold"}}>Hello, my name is Roh.</Text>
+            <Text style={{fontSize: "30px"}}>
                 <TypeWriter
                     onInit={(typewriter) => {
                         typewriter
@@ -43,7 +32,7 @@ function Home() {
                     }}
                     options={{ loop: true }}
                 />
-            </div>
+            </Text>
         </Container>
     )
 }
