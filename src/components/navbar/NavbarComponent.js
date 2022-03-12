@@ -12,7 +12,7 @@ const styles = {
     }
 }
 
-function NavbarCustom() {
+function NavbarComponent() {
     return (
         <Navbar bg='light' sticky='top' expand="lg" style={{borderBottom: "2px solid black"}}>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -31,7 +31,9 @@ function NavbarCustom() {
                     <Nav.Link 
                         className="me-3" 
                         eventKey="about" 
-                        onClick={()=> {scroller.scrollTo('about')}}
+                        onClick={()=> {scroller.scrollTo('about', {
+                            offset:-70
+                        })}}
                     >
                         <Text style={styles.textStyle}> About </Text>
                     </Nav.Link>
@@ -53,4 +55,4 @@ function NavbarCustom() {
     )
 };
 
-export default NavbarCustom;
+export default NavbarComponent;
