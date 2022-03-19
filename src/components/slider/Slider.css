@@ -1,0 +1,26 @@
+.slider {
+  overflow: hidden;
+  width: 50vw;
+  align-self: center;
+}
+
+.slider-inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+  height: 400px;
+}
+
+.slider-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
