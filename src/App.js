@@ -11,9 +11,9 @@ function App() {
       <BrowserRouter>
         <NavbarComponent />
         <Routes>
-          <Route path='rohinesh.netlify.app/' element={<Home />} />
-          <Route path='rohinesh.netlify.app/projects' element={<Project />} />
-          <Route path='rohinesh.netlify.app/contact' element={<Contact />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/projects' element={<Project />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </div>
