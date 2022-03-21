@@ -7,7 +7,7 @@
 .slider-inner {
   white-space: nowrap;
   transition: transform 0.3s;
-  height: 400px;
+  align-self: center;
 }
 
 .slider-item {

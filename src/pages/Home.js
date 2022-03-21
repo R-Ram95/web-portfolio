@@ -1,10 +1,11 @@
-import { Container, Image, Stack, Row, Col } from 'react-bootstrap';
+import { Container, Image, Stack, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TypeWriter from 'typewriter-effect';
-import Text from '../../components/Text';
-import TechStackColumn from '../../components/TechStackColumn';
-import LogoImage from '../../components/LogoImage';
-import './home.css';
+import Text from '../components/Text';
+import TechStackColumn from '../components/TechStackColumn';
+import LogoImage from '../components/LogoImage';
+
+import '../index';
 
 // css styling
 const styles = {

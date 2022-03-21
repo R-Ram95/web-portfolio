@@ -5,7 +5,6 @@ export const ProjectsData = [
       'Full stack web app to manage animals and their health using the Agile and Scrum development process.',
       'Built dynamically rendered front end using React JS and Axios to fetch HTTP requests.',
       'Built the webserver application using Java with Spring Boot and the Hibernate implementation of JPA.',
-      'Designed RESTful APIs to connect the frontend to the backend.',
       'Designed and implemented a relational database in SQL to store animal and veterinary personnel data.',
     ],
     url: 'https://github.com/R-Ram95/VetApplication',

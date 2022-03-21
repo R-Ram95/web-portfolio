@@ -3,7 +3,6 @@ import { Container } from 'react-bootstrap';
 import Text from '../components/Text';
 import { ProjectsData } from '../data/projects';
 import CardComponent from '../components/card/CardComponent';
-import { motion } from 'framer-motion';
 
 function Project() {
   return (

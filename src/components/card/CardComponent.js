@@ -1,12 +1,12 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Text from '../Text';
 
 const styles = {
   cardStyle: {
-    minWidth: '75%',
-    maxWidth: '100%',
-    minHeight: '75%',
+    minWidth: '90%',
+    maxWidth: '90%',
     whiteSpace: 'normal',
     borderColor: 'black',
     borderRadius: '25px',
@@ -16,7 +16,7 @@ const styles = {
 const CardComponent = (props) => {
   let { title, description, url } = props;
   return (
-    <Card style={styles.cardStyle} onClick={() => window.open(url)}>
+    <Card style={styles.cardStyle}>
       <Card.Body style={{ maxWidth: '90%' }}>
         <Card.Title>
           <Text style={{ fontWeight: 'bold', fontSize: '30px' }}>{title}</Text>
@@ -32,6 +32,21 @@ const CardComponent = (props) => {
             })}
           </ul>
         </Card.Text>
+        <Card.Footer
+          className='d-flex justify-content-center'
+          style={{ backgroundColor: 'white', width: '100%' }}
+        >
+          <Button
+            style={{
+              backgroundColor: 'black',
+              borderColor: 'black',
+              borderRadius: '20px',
+            }}
+            onClick={() => window.open(url)}
+          >
+            GitHub
+          </Button>
+        </Card.Footer>
       </Card.Body>
     </Card>
   );
