@@ -1,19 +1,19 @@
-import 'bulma/css/bulma.css'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-import Projects from './components/Projects/Projects';
+import React from 'react';
+import Home from './pages/Home';
+import Project from './pages/Project';
+import Contact from './pages/Contact';
+import NavbarComponent from './components/navbar/NavbarComponent';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
-        <Navbar/>
+        <NavbarComponent />
         <Routes>
-          <Route path="/web-portfolio" element={<Home/>}/>
-        </Routes>
-        <Routes>
-          <Route path="/web-portfolio/projects" element={<Projects/>}/>
+          <Route path='/' element={<Home />} />
+          <Route path='/projects' element={<Project />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </div>
