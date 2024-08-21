@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "deployment:plan": "cd ./infrastructure && terraform plan",
+    "deployment:deploy": "cd ./infrastructure && terraform apply",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
