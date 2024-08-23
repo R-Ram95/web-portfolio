@@ -15,17 +15,24 @@ terraform {
     encrypt        = true
     profile        = "default"
   }
+}
 
+module "web-portfolio-static-web" {
+  source           = "git::https://github.com/R-Ram95/terraform-modules//aws_static_web"
+  project_name     = "web-portfolio"
+  bucket_name      = "web-portfolio-rram-bucket"
+  cf_dist_name     = "web-portfolio-cf"
+  root_domain_name = var.domain_name
+  path_to_bundle   = "../dist"
 }
 
 // UNCOMMENT WHEN BOOTSTRAPPING
-# module "terraform-be" {
-#   source               = "git::https://github.com/R-Ram95/terraform-modules//aws_terraform_be"
-#   region               = "us-east-1"
-#   aws_profile          = "default"
-#   bucket_name          = "web-portfolio-tf-state"
-#   project_name         = "web-portfolio"
-#   enable_state_locking = true
-#   dynamodb_name        = "web-portfolio-tf-lock"
-
-# }
+module "terraform-be" {
+  source               = "git::https://github.com/R-Ram95/terraform-modules//aws_terraform_be"
+  region               = "us-east-1"
+  aws_profile          = "default"
+  bucket_name          = "web-portfolio-tf-state"
+  project_name         = "web-portfolio"
+  enable_state_locking = true
+  dynamodb_name        = "web-portfolio-tf-lock"
+}

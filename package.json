@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "deployment:update-modules": "cd ./infrastructure && terraform get -update",
     "deployment:plan": "cd ./infrastructure && terraform plan",
     "deployment:deploy": "cd ./infrastructure && terraform apply",
     "build": "tsc -b && vite build",
