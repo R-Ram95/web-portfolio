@@ -1,0 +1,94 @@
+anchors:
+  configure-aws-access: &configure-aws-access
+    run:
+      name: Configure AWS access
+      command: |
+        mkdir -p ~/.aws
+        file=~/.aws/credentials
+        echo "[default]" > $file
+        echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> $file
+        echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> $file
+
+  # run for building
+  install-site-dependencies: &install-site-dependencies
+    run:
+      name: Install site dependencies
+      command: |
+        npm install
+
+  # run for deploying
+  install-infrastructure-dependencies: &install-infrastructure-dependencies
+    run:
+      name: Install Infrastructure Dependencies
+      command: |
+        npm run deployment:install-deps
+
+  configure-build-environment: &configure-build-environment
+    run:
+      name: Configure build environment
+      command: |
+        mkdir ~/workspace
+
+  build-site-package: &build-site-package
+    run:
+      name: Run Build
+      command: |
+        npm run build
+        cp -r dist ~/workspace
+
+  cache-dependencies: &cache-dependencies
+    save_cache:
+      key: dependency-cache-{{ checksum "package.json" }}
+      paths:
+        - ./node_modules
+        - ./infrastructure/.terraform
+
+  load-dependency-cache: &load-dependency-cache
+    restore_cache:
+      key: dependency-cache-{{ checksum "package.json" }}
+
+version: 2.1
+
+executors:
+  default:
+    docker:
+      - image: cimg/node:16.18.1
+jobs:
+
+  build:
+    executor: default
+    steps:
+      - checkout
+      - *load-dependency-cache
+      - *install-site-dependencies
+      - *cache-dependencies
+      - *configure-build-environment
+      - *build-site-package
+      - persist_to_workspace:
+          root: ~/
+          paths: [workspace]
+
+  deploy:
+    executor: default
+    steps:
+      - checkout
+      - *load-dependency-cache
+      - *install-infrastructure-dependencies
+      - *configure-aws-access
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Deploy to AWS
+          command: |
+            cp -r ~/workspace/dist ./
+            cd ./infrastructure
+            ENV=$ENV npm run deploy
+          no_output_timeout: 30m
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
