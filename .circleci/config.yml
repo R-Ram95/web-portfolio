@@ -77,6 +77,10 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
+          name: Set domain env variable
+          command: |
+            echo "domain_name = \"$DOMAIN_NAME\"" > ./infrastructure/terraform.tfvars
+      - run:
           name: Deploy to AWS
           command: |
             cp -r ~/workspace/dist ./
