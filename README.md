@@ -3,8 +3,8 @@
 - [x] Set up repo
 - [x] Terraform setup
 - [x] Purchase domain
-- [ ] Add Domain and SSL cert to cloudfront distribution
-- [ ] Cicd setup
+- [x] Add Domain and SSL cert to cloudfront distribution
+- [x] Cicd setup
 - [ ] Add tailwind
 - [ ] Portfolio design with Sigma??
 - [ ] Create about me section
