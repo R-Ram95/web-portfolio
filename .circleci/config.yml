@@ -90,5 +90,6 @@ workflows:
     jobs:
       - build
       - deploy:
+          context: aws-account
           requires:
             - build
