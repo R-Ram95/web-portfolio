@@ -9,43 +9,41 @@ anchors:
         echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> $file
         echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> $file
 
-  # run for building
-  install-site-dependencies: &install-site-dependencies
+  # Installs front end dependencies
+  install-fe-dependencies: &install-fe-dependencies
     run:
-      name: Install site dependencies
+      name: Install front end dependencies
       command: |
         npm install
 
-  # run for deploying
-  install-infrastructure-dependencies: &install-infrastructure-dependencies
-    run:
-      name: Install Infrastructure Dependencies
-      command: |
-        npm run deployment:install-deps
-
-  configure-build-environment: &configure-build-environment
-    run:
-      name: Configure build environment
-      command: |
-        mkdir ~/workspace
-
-  build-site-package: &build-site-package
+# Creates a centralized directory to store build artifacts, allowing them to be persisted between jobs
+# and builds to the FE package
+  build-fe-package: &build-fe-package
     run:
       name: Run Build
       command: |
+        mkdir ~/workspace
         npm run build
         cp -r dist ~/workspace
 
+  # Initializes infrastructure
+  install-infrastructure-dependencies: &install-infrastructure-dependencies 
+    run:
+      name: Install Infrastructure Dependencies
+      command: |
+        cd ./infrastructure
+        terraform init
+
   cache-dependencies: &cache-dependencies
     save_cache:
-      key: dependency-cache-{{ checksum "package.json" }}
+      key: dependency-cache-{{ checksum "package-lock.json" }}
       paths:
         - ./node_modules
         - ./infrastructure/.terraform
 
   load-dependency-cache: &load-dependency-cache
     restore_cache:
-      key: dependency-cache-{{ checksum "package.json" }}
+      key: dependency-cache-{{ checksum "package-lock.json" }}
 
 version: 2.1
 
@@ -60,16 +58,17 @@ jobs:
     steps:
       - checkout
       - *load-dependency-cache
-      - *install-site-dependencies
+      - *install-fe-dependencies
       - *cache-dependencies
-      - *configure-build-environment
-      - *build-site-package
+      - *build-fe-package
       - persist_to_workspace:
           root: ~/
           paths: [workspace]
 
   deploy:
     executor: default
+    docker:
+      - image: hashicorp/terraform:light
     steps:
       - checkout
       - *load-dependency-cache
@@ -82,8 +81,7 @@ jobs:
           command: |
             cp -r ~/workspace/dist ./
             cd ./infrastructure
-            ENV=$ENV npm run deploy
-          no_output_timeout: 30m
+            terraform apply -auto-approve
 
 workflows:
   build-and-deploy:
