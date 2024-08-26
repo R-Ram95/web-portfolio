@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "tsc -b && vite build",
+    "deployment:install-deps": "cd ./infrastructure && terraform init",
     "deployment:update-modules": "cd ./infrastructure && terraform get -update",
     "deployment:plan": "cd ./infrastructure && terraform plan",
     "deployment:deploy": "cd ./infrastructure && terraform apply",
-    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
