@@ -36,14 +36,14 @@ anchors:
 
   cache-dependencies: &cache-dependencies
     save_cache:
-      key: dependency-cache-{{ checksum "package-lock.json" }}
+      key: dependency-cache-{{ checksum "package.json" }}
       paths:
         - ./node_modules
         - ./infrastructure/.terraform
 
   load-dependency-cache: &load-dependency-cache
     restore_cache:
-      key: dependency-cache-{{ checksum "package-lock.json" }}
+      key: dependency-cache-{{ checksum "package.json" }}
 
 version: 2.1
 
@@ -72,8 +72,8 @@ jobs:
     steps:
       - checkout
       - *load-dependency-cache
-      - *install-infrastructure-dependencies
       - *configure-aws-access
+      - *install-infrastructure-dependencies
       - attach_workspace:
           at: ~/
       - run:
