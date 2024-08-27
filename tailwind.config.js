@@ -18,6 +18,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["IBM Plex Mono"],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
