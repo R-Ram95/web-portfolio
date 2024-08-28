@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Props } from "./TimeLine.model";
 
 const TimeLine = ({ labels, onClick }: Props) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const handleClick = (index: number) => {
     setActiveIndex(index);
