@@ -5,27 +5,29 @@ import {
   CardFooter,
   CardTitle,
 } from "../../components/card/Card";
+import { experienceData, ExperienceType } from "./Experience.data";
 
-const ExperienceCard = () => {
+interface ExperienceCardProps {
+  experience: ExperienceType;
+}
+
+const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   return (
     <Card className="group">
-      <div className=" text-slate-400 text-nowrap text-sm">2022-2024</div>
+      <div className=" text-slate-400 text-nowrap text-sm">
+        {experience.year}
+      </div>
       <div className="ml-0 md:ml-6">
         <CardTitle className="group-hover:text-emerald-300">
-          FullStack Engineer - ACCOLITE DIGITAL
+          {experience.position}
         </CardTitle>
         <CardDescription className="mt-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quos
-          iste reiciendis maxime voluptate quod pariatur accusantium est
-          obcaecati, culpa, eligendi quo consequuntur harum animi facilis rerum.
-          Quis, nostrum laborum!
+          {experience.description}
         </CardDescription>
         <CardFooter className="mt-4 flex flex-wrap flex-row gap-2">
-          <Pill>Typescript</Pill>
-          <Pill>Typescript</Pill>
-          <Pill>Typescript</Pill>
-          <Pill>Typescript</Pill>
-          <Pill>Typescript</Pill>
+          {experience.skills.map((skill) => (
+            <Pill>{skill}</Pill>
+          ))}
         </CardFooter>
       </div>
     </Card>
@@ -35,7 +37,11 @@ const ExperienceCard = () => {
 const Experience = () => {
   return (
     <div>
-      <ExperienceCard />
+      {experienceData.map((exp) => (
+        <div className="mb-4">
+          <ExperienceCard experience={exp} />
+        </div>
+      ))}
     </div>
   );
 };

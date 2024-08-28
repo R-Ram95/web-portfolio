@@ -46,7 +46,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={clsx("text-sm tracking-tight text-slate-200", className)}
+    className={clsx("text-sm text-slate-400 tracking-tight ", className)}
     {...props}
   />
 ));
