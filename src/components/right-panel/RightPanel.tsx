@@ -1,4 +1,5 @@
-import AboutMe from "../about-me";
+import AboutMe from "../../sections/about-me";
+import Experience from "../../sections/experience";
 
 const RightPanel = () => {
   return (
@@ -7,7 +8,7 @@ const RightPanel = () => {
         <AboutMe />
       </div>
       <div className="mt-48" id="experience">
-        <h1>Experieince</h1>
+        <Experience />
       </div>
       <div id="projects">
         <h1>Projects</h1>

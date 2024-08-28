@@ -32,15 +32,15 @@ const LeftPanel = () => {
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between lg:py-24 text-slate-200">
       <div className="flex flex-col">
-        <h1 className="text-4xl font-sem-bold">ROHINESH RAM</h1>
+        <h1 className="text-4xl font-sem-bold tracking-wide">ROHINESH RAM</h1>
         <h2 className="text-xl mt-4">
           Software Engineer X Mechanical Engineer
         </h2>
-        <div className="mt-20 hidden md:flex">
+        <div className="mt-20 hidden lg:flex">
           <TimeLine labels={labels} onClick={onClick} />
         </div>
       </div>
-      <ul className="flex flex-row gap-8">
+      <ul className="flex flex-row gap-8 mt-16 lg:mt-0">
         {links.map((link) => (
           <li className="hover">
             <a href={link.link} target="_blank">
