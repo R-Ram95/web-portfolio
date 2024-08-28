@@ -2,7 +2,7 @@ const AboutMe = () => {
   return (
     <div>
       <div>
-        <p className="text-slate-200 mb-4">
+        <p className="text-slate-200 mb-4 ">
           My coding journey began with control systems and PLCs during my time
           as a Mechanical Engineer. The ability to model the real world and
           automate manual tasks was fascinating to me. In 2021, I returned to

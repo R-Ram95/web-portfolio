@@ -6,7 +6,7 @@ const RightPanel = () => {
       <div id="about-me">
         <AboutMe />
       </div>
-      <div id="experience">
+      <div className="mt-48" id="experience">
         <h1>Experieince</h1>
       </div>
       <div id="projects">
