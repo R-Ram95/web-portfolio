@@ -15,3 +15,4 @@
 - [ ] Create blogs section
 - [ ] Create education section
 - [ ] Fix scroll to behaviour
+- [ ] Create and add icon for tab
