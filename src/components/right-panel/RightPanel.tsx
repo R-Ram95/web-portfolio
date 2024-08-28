@@ -8,16 +8,16 @@ const RightPanel = () => {
       <section className="scroll-mt-24" id="about-me">
         <AboutMe />
       </section>
-      <section className="mt-48 scroll-mt-24" id="experience">
+      <section className="mt-40 scroll-mt-24" id="experience">
         <Experience />
       </section>
-      <section className="mt-48 scroll-mt-24" id="projects">
+      <section className="mt-40 scroll-mt-24" id="projects">
         <UnderConstruction title="Projects" />
       </section>
-      <section className="mt-48 scroll-mt-24" id="writing">
+      <section className="mt-40 scroll-mt-24" id="writing">
         <UnderConstruction title="Writing" />
       </section>
-      <section className="mt-48 scroll-mt-24" id="education-x-certifications">
+      <section className="mt-40 scroll-mt-24" id="education-x-certifications">
         <UnderConstruction title="Education" />
       </section>
     </main>

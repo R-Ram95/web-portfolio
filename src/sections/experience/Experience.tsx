@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "../../components/card/Card";
 import { experienceData, ExperienceType } from "./Experience.data";
+import { FaArrowRight } from "react-icons/fa6";
 
 interface ExperienceCardProps {
   experience: ExperienceType;
@@ -42,6 +43,14 @@ const Experience = () => {
           <ExperienceCard experience={exp} />
         </div>
       ))}
+      <a
+        className="flex flex-row items-center gap-2 hover:gap-4 text-slate-200 hover:text-emerald-300 text-md mt-4 cursor-pointer"
+        href="/rohinesh-ram-resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View Full Resume <FaArrowRight />
+      </a>
     </div>
   );
 };

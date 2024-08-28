@@ -18,6 +18,6 @@ export const experienceData = [
     year: "2018 - 2021",
     description:
       "Enhanced manufacturing processes, addressing defects, and refining product quality through design changes. Designed components and managed a team of welders and millwrights throughout the development of multi-million dollar projects.",
-    skills: ["Solidworks", "Project Management", "VBA"],
+    skills: ["Solidworks", "Project Management", "VBA", "FEA"],
   },
 ];
