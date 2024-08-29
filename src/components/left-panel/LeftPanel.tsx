@@ -42,7 +42,7 @@ const LeftPanel = () => {
       </div>
       <ul className="flex flex-row gap-8 mt-16 lg:mt-0">
         {links.map((link) => (
-          <li className="hover">
+          <li className="hover" key={`${link.link}`}>
             <a href={link.link} target="_blank">
               {link.icon}
             </a>

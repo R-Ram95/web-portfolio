@@ -1,3 +1,4 @@
+import Projects from "../../sections/projects";
 import AboutMe from "../../sections/about-me";
 import Experience from "../../sections/experience";
 import UnderConstruction from "../under-construction/UnderConstruction";
@@ -12,7 +13,7 @@ const RightPanel = () => {
         <Experience />
       </section>
       <section className="mt-40 scroll-mt-24" id="projects">
-        <UnderConstruction title="Projects" />
+        <Projects />
       </section>
       <section className="mt-40 scroll-mt-24" id="writing">
         <UnderConstruction title="Writing" />

@@ -14,7 +14,7 @@ interface ExperienceCardProps {
 
 const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   return (
-    <Card className="group">
+    <Card className="group flex-wrap md:flex-nowrap">
       <div className=" text-slate-400 text-nowrap text-sm">
         {experience.year}
       </div>
@@ -27,7 +27,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         </CardDescription>
         <CardFooter className="mt-4 flex flex-wrap flex-row gap-2">
           {experience.skills.map((skill) => (
-            <Pill>{skill}</Pill>
+            <Pill key={skill}>{skill}</Pill>
           ))}
         </CardFooter>
       </div>
@@ -39,7 +39,7 @@ const Experience = () => {
   return (
     <div>
       {experienceData.map((exp) => (
-        <div className="mb-4">
+        <div className="mb-4" key={exp.position}>
           <ExperienceCard experience={exp} />
         </div>
       ))}

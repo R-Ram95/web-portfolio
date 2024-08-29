@@ -8,7 +8,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={clsx(
-      "flex flex-row flex-wrap md:flex-nowrap hover:bg-slate-400/5 hover:shadow-2xl rounded-md hover:backdrop-blur-md p-2",
+      "flex flex-row  hover:bg-slate-400/5 hover:shadow-2xl rounded-md hover:backdrop-blur-md p-4",
       className
     )}
     {...props}
