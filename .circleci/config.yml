@@ -47,17 +47,10 @@ anchors:
 
 version: 2.1
 
-executors:
-  node-executor:
-    docker:
-      - image: cimg/node:16.18.1
-  terraform-aws-executor:
-    docker:
-      - image: hashicorp/terraform:light
-      - image: cimg/aws:2024.03
 jobs:
   build:
-    executor: node-executor
+    docker:
+      - image: cimg/node:16.18.1
     steps:
       - checkout
       - *load-dependency-cache
@@ -69,9 +62,9 @@ jobs:
           paths: [workspace]
 
   deploy:
-    executor: terraform-aws-executor
     docker:
       - image: hashicorp/terraform:light
+      - image: cimg/aws:2024.03
     steps:
       - checkout
       - *load-dependency-cache
