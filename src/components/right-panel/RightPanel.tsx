@@ -2,6 +2,7 @@ import Projects from "../../sections/projects";
 import AboutMe from "../../sections/about-me";
 import Experience from "../../sections/experience";
 import UnderConstruction from "../under-construction/UnderConstruction";
+import Education from "../../sections/education";
 
 const RightPanel = () => {
   return (
@@ -19,7 +20,7 @@ const RightPanel = () => {
         <UnderConstruction title="Writing" />
       </section>
       <section className="mt-40 scroll-mt-24" id="education-x-certifications">
-        <UnderConstruction title="Education" />
+        <Education />
       </section>
     </main>
   );

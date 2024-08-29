@@ -20,7 +20,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         window.open(experience.link, "_blank");
       }}
     >
-      <div className=" text-slate-400 text-nowrap text-sm">
+      <div className="text-slate-400 text-nowrap text-sm">
         {experience.year}
       </div>
       <div className="ml-0 md:ml-6">
