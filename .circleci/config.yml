@@ -86,6 +86,10 @@ jobs:
             cp -r ~/workspace/dist ./
             cd ./infrastructure
             terraform apply -auto-approve
+      - run: 
+          name: Create Cloudfront Invalidation
+          command: |
+            aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths "/*"
 
 workflows:
   build-and-deploy:
