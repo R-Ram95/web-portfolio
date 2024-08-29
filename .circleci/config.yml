@@ -51,8 +51,8 @@ executors:
   default:
     docker:
       - image: cimg/node:16.18.1
+      - image: amazon/aws-cli:2.13.13
 jobs:
-
   build:
     executor: default
     steps:
