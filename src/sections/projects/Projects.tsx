@@ -54,7 +54,7 @@ const Projects = () => {
         href="https://github.com/R-Ram95"
         target="_blank"
       >
-        View More of my projects <FaArrowRight />
+        View more of my projects <FaArrowRight />
       </a>
     </div>
   );

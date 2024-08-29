@@ -3,6 +3,7 @@ export interface ExperienceType {
   year: string;
   description: string;
   skills: string[];
+  link: string;
 }
 
 export const experienceData = [
@@ -12,6 +13,7 @@ export const experienceData = [
     description:
       "Build, style, and ship high-quality web applications for various clients. Notable achievements include refactoring code to reduce graph-building code by 82% while simultaneously enhancing user interactivity and optimizing web application performance with modern client-side caching techniques, reducing load times by 5 seconds. Additionally, collaborated with developers and product managers/owners to drive continuous improvements in user experience.",
     skills: ["React", "Javascript", "NodeJS", "AWS", "Terraform", "Docker"],
+    link: "https://www.bounteous.com/",
   },
   {
     position: "Design Engineer - Gentex Industries",
@@ -19,5 +21,6 @@ export const experienceData = [
     description:
       "Enhanced manufacturing processes, addressing defects, and refining product quality through design changes. Designed components and managed a team of welders and millwrights throughout the development of multi-million dollar projects.",
     skills: ["Solidworks", "Project Management", "VBA", "FEA"],
+    link: "https://www.gentex.ca/",
   },
 ];

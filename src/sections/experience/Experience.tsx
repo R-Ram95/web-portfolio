@@ -14,7 +14,12 @@ interface ExperienceCardProps {
 
 const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   return (
-    <Card className="group flex-wrap md:flex-nowrap">
+    <Card
+      className="group flex-wrap md:flex-nowrap cursor-pointer"
+      onClick={() => {
+        window.open(experience.link, "_blank");
+      }}
+    >
       <div className=" text-slate-400 text-nowrap text-sm">
         {experience.year}
       </div>
