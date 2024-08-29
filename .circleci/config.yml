@@ -54,7 +54,7 @@ executors:
   terraform-aws-executor:
     docker:
       - image: hashicorp/terraform:light
-      - image: amazon/aws-cli:2.13.13
+      - image: cimg/aws:2024.03
 jobs:
   build:
     executor: node-executor
