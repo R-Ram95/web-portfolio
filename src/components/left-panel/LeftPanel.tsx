@@ -40,7 +40,7 @@ const LeftPanel = () => {
           <TimeLine labels={labels} onClick={onClick} />
         </div>
       </div>
-      <ul className="flex flex-row gap-8 mt-16 lg:mt-0">
+      <ul className="flex flex-row gap-8 mt-3">
         {links.map((link) => (
           <li className="hover" key={`${link.link}`}>
             <a href={link.link} target="_blank">

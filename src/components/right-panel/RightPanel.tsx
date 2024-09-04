@@ -6,7 +6,7 @@ import Education from "../../sections/education";
 
 const RightPanel = () => {
   return (
-    <main className="md:top-0 md:py-24">
+    <main className="py-24">
       <section className="scroll-mt-24" id="about-me">
         <AboutMe />
       </section>
