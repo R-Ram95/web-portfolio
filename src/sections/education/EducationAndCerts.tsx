@@ -15,7 +15,7 @@ const EducationAndCertsCard = ({
 }: EducationAndCertsCardProps) => {
   return (
     <Card
-      className="group flex-wrap md:flex-nowrap cursor-pointer"
+      className="group flex-col md:flex-row cursor-pointer"
       onClick={() => {
         window.open(educationAndCert.link, "_blank");
       }}
