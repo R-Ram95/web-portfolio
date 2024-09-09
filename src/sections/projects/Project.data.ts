@@ -25,6 +25,13 @@ export const projectData: ProjectType[] = [
     link: "https://github.com/R-Ram95/web-portfolio",
   },
   {
+    title: "Terraform Modules",
+    description: "A collection of reusable terraform modules.",
+    technologies: ["Terraform", "IaC"],
+    thumbnailLink: "/terraform.png",
+    link: "https://github.com/R-Ram95/terraform-modules",
+  },
+  {
     title: "EarnNLearn",
     description:
       "Fullstack web application enabling parents to assign chores and award rewards to their children. Deployed on Render.com",
