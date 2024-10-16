@@ -8,6 +8,23 @@ export interface ProjectType {
 
 export const projectData: ProjectType[] = [
   {
+    title: "rDrive - Image and Video Hosting Web Application",
+    description:
+      "A secure, serverless web application for uploading, organizing, and downloading images and videos. Integrated AWS services, including API Gateway, Lambda, and S3, to provide presigned URLs for client uploads and downloads, with custom file management features.",
+    technologies: [
+      "HTTP Api",
+      "AWS Gateway",
+      "AWS Lambda",
+      "AWS CloudFront",
+      "AWS S3",
+      "Serverless",
+      "React",
+      "Typescript",
+    ],
+    thumbnailLink: "/rdrive.png",
+    link: "https://rdrive.rohineshram.com",
+  },
+  {
     title: "Web Portfolio - Rohinesh Ram",
     description:
       "A web portfolio introducing me and show-casing my skills and talents. Built with React + Typescript and deployed on AWS.",
@@ -17,7 +34,7 @@ export const projectData: ProjectType[] = [
       "IaC",
       "CloudFront",
       "SSL/TLS",
-      "S3",
+      "AWS S3",
       "Terraform",
       "tailwindcss",
     ],
